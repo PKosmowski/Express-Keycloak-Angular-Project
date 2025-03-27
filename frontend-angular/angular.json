@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "frontend-angular-app": {
+    "keycloack-fe-integration": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/frontend-angular-app",
+            "outputPath": "dist/keycloack-fe-integration",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -59,10 +59,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "frontend-angular-app:build:production"
+              "buildTarget": "keycloack-fe-integration:build:production"
             },
             "development": {
-              "buildTarget": "frontend-angular-app:build:development"
+              "buildTarget": "keycloack-fe-integration:build:development"
             }
           },
           "defaultConfiguration": "development"
