@@ -7,7 +7,7 @@ export const appConfig: ApplicationConfig = {
   providers: [
     provideKeycloak({
       config: {
-        url: 'localhost:8180/auth',
+        url: 'http://localhost:8180',
         realm: 'projekt-realm',
         clientId: 'angular-app'
       },

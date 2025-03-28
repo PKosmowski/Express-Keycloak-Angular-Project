@@ -6,11 +6,11 @@
         <div class="user-message">Hello non-admin user!</div>
     }
     <div class="buttons">
-        @if (loggedIn == true) {
-            <button onclick="logout()">LOGOUT</button>  
-        } @else {
-        <button onclick="login()">LOG IN</button>
-        }
+        <!-- @if (loggedIn == true) { -->
+            <button click="logout()">LOGOUT</button>  
+        <!-- } @else { -->
+        <button (click)="login()">LOG IN</button>
+        <!-- } -->
     </div>
 
 
