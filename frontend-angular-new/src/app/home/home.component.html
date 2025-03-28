@@ -1,0 +1,17 @@
+
+<div class="home-body">
+    @if (admin == true) {
+        <div class="admin-message">Hello admin!</div>
+    } @else {
+        <div class="user-message">Hello non-admin user!</div>
+    }
+    <div class="buttons">
+        @if (loggedIn == true) {
+            <button onclick="logout()">LOGOUT</button>  
+        } @else {
+        <button onclick="login()">LOG IN</button>
+        }
+    </div>
+
+
+</div>
