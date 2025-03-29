@@ -34,6 +34,10 @@ app.get('/hello', (req, res) => {
     res.json({message: 'Hello!'});
 });
 
+app.get("/admin-only", keycloak.protect('realm:admin'), (req, res) => {
+  res.json({ message: "Tylko dla adminów!" });
+});
+
 app.listen(5000, () => {
   console.log('Backend: http://localhost:5000');
 });
