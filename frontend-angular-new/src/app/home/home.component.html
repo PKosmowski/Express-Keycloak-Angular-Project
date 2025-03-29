@@ -2,16 +2,17 @@
 <div class="home-body">
     @if (admin == true) {
         <div class="admin-message">Hello admin!</div>
-    } @else {
+    } @else if (isLoggedIn == true) {
         <div class="user-message">Hello non-admin user!</div>
+    } @else {
+        <div class="guest-message">Hello guest!</div>
     }
     <div class="buttons">
-        <!-- @if (loggedIn == true) { -->
-            <button (click)="logout()">LOGOUT</button>  
-        <!-- } @else { -->
-        <button (click)="login()">LOG IN</button>
-        <!-- } -->
-    </div>
 
+            <button (click)="logout()">LOGOUT</button>  
+
+            <button (click)="login()">LOG IN</button>
+
+    </div>
 
 </div>

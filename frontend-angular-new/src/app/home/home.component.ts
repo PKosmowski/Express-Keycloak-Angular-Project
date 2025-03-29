@@ -1,66 +1,19 @@
-// import { Component, inject, OnInit } from '@angular/core';
-// import Keycloak from 'keycloak-js';
-
-// @Component({
-//   selector: 'app-home',
-//   imports: [],
-//   templateUrl: './home.component.html',
-//   styleUrl: './home.component.css'
-// })
-// export class HomeComponent {
-
-//   keycloakService = inject(Keycloak);
-
-//   admin: boolean = false;
-//   loggedIn: boolean = false;
-//   roles: string[] = [];
-
-
-
-//   login() {
-//     this.keycloakService.login();
-//   }
-
-//   logout() {
-//     this.keycloakService.logout();
-//   }
-// }
-
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
+// import { keycloak } from '../../keycloak-init';
 import Keycloak from 'keycloak-js';
 
 @Component({
   selector: 'app-home',
+  standalone: true,
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit {
-  private readonly keycloak = inject(Keycloak);
+export class HomeComponent {
   roles: string[] = [];
-  admin = true;
+  isLoggedIn: boolean = false;
+  admin: boolean = false;
 
-  async ngOnInit() {
-    try {
-      await this.keycloak.init({ onLoad: 'login-required' });
-
-      if (this.keycloak.authenticated) {
-        const token = this.keycloak.token;
-        if (token) {
-          this.roles = this.extractRoles(token);
-          if (this.roles.includes('admin')) {
-            this.admin = false;
-          }
-        }
-      }
-    } catch (error) {
-      console.error('Keycloak initialization failed', error);
-    }
-  }
-
-  private extractRoles(token: string): string[] {
-    const decoded = JSON.parse(atob(token.split('.')[1])); // Dekodowanie tokena JWT
-    return decoded?.realm_access?.roles || []; // Pobranie ról z `realm_access`
-  }
+  private readonly keycloak = inject(Keycloak);
 
   login() {
     this.keycloak.login();
@@ -69,4 +22,10 @@ export class HomeComponent implements OnInit {
   logout() {
     this.keycloak.logout();
   }
+
+  getUserRoles(): string[] {
+    this.roles = this.keycloak.tokenParsed?.realm_access?.roles || [];
+  }
+
+
 }

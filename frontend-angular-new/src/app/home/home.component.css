@@ -1,4 +1,4 @@
-.admin-message, .user-message {
+.admin-message, .user-message, .guest-message {
     display: flex;
     justify-content: center;
     background-color: red;
