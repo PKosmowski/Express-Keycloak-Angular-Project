@@ -23,9 +23,7 @@ export class HomeComponent {
     this.keycloak.logout();
   }
 
-  getUserRoles(): string[] {
+  getUserRoles(): any {
     this.roles = this.keycloak.tokenParsed?.realm_access?.roles || [];
   }
-
-
 }
