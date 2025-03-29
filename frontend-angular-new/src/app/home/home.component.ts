@@ -1,12 +1,13 @@
 import { Component, inject } from '@angular/core';
-// import { keycloak } from '../../keycloak-init';
 import Keycloak from 'keycloak-js';
+import { AdminPanelComponent } from "../admin-panel/admin-panel.component";
 
 @Component({
   selector: 'app-home',
   standalone: true,
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
+  imports: [AdminPanelComponent]
 })
 export class HomeComponent {
   roles: string[] = [];

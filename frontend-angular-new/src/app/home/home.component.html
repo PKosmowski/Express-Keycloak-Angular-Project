@@ -1,19 +1,22 @@
 
 <div class="home-body">
-    @if (admin == true) {
+    @if (roles.includes('admin') == true) {
         <div class="admin-message">Hello admin!</div>
-    } @else if (isLoggedIn == true) {
+        <app-admin-panel ></app-admin-panel>
+    } @else if (this.roles.includes('user') == true) {
         <div class="user-message">Hello non-admin user!</div>
     } @else {
         <div class="guest-message">Hello guest!</div>
     }
     <div class="buttons">
-
+        @if (this.roles) {
             <button (click)="logout()">LOGOUT</button>  
-
+        } @else {
             <button (click)="login()">LOG IN</button>
-            <button (click)="getUserRoles()">test</button>
-            <div>{{ roles }}</div>
+        }
+
+        <button (click)="getUserRoles()">GET USER ROLES</button>
+        <div class="roles">{{ roles }}</div>
     </div>
 
 </div>
