@@ -1,5 +1,5 @@
 # ENG 
-## This is only an academic project. It will go private once it's evaluated.
+## This is an academic project. It will go private once it's evaluated.
 
 
 # PL
