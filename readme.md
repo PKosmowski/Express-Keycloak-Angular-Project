@@ -1,3 +1,7 @@
+# ENG 
+## This is an academic project. It will go private once it's evaluated.
+
+
 # PL
 ##  Projekt Bezpieczenstwo Aplikacji typu WEB
 
