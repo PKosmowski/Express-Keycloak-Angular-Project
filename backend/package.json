@@ -14,7 +14,9 @@
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "ef-keycloak-connect": "^1.7.2-RC13",
-    "express": "^4.21.2"
+    "express": "^4.21.2",
+    "express-oauth2-jwt-bearer": "^1.6.1",
+    "keycloak-js": "^26.2.0"
   },
   "devDependencies": {
     "nodemon": "^3.1.9"
