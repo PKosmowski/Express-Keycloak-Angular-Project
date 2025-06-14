@@ -28,7 +28,7 @@ app.get('/protected', checkJwt, (req, res) => {
   res.send('Succsess! You accessed a protected endpoint.');
 });
 
-app.get('/admin', checkJwt, requireRole('admin'), (req, res) => {
+app.get('/admin', requireRole('admin'), checkJwt, (req, res) => {
   res.send('Welcome, admin!');
 });
 
