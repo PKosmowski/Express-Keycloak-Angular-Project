@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import Keycloak from 'keycloak-js';
 import { AdminPanelComponent } from "../admin-panel/admin-panel.component";
 
@@ -9,12 +9,16 @@ import { AdminPanelComponent } from "../admin-panel/admin-panel.component";
   styleUrls: ['./home.component.css'],
   imports: [AdminPanelComponent]
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit{
   roles: string[] = [];
   isLoggedIn: boolean = false;
   admin: boolean = false;
 
   private readonly keycloak = inject(Keycloak);
+
+  ngOnInit(): void {
+      this.getUserRoles();
+  }
 
   login() {
     this.keycloak.login();
