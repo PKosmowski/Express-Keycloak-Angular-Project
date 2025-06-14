@@ -1,5 +1,5 @@
-# PL
-##  Projekt Bezpieczenstwo Aplikacji typu WEB
+### PL
+#  Projekt Bezpieczenstwo Aplikacji typu WEB
 
 ### Uruchomienie wszystkich elementów projektu:
 
@@ -56,3 +56,6 @@ dla usera
 --data-urlencode 'username=testuser' \
 --data-urlencode 'password=user'
 ```
+
+## Decoded token usera
+![alt text]({98102D61-5C55-41C0-BC19-83B1F310DCC7}.png)
